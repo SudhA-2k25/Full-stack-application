@@ -33,7 +33,8 @@ app.listen(port, () =>{
 })
 
 // connecting mongodb
-mongoose.connect('mongodb://localhost:27017')
+// that link got from mongodb atlas , there enter ur db_name and password which is generated
+mongoose.connect('mongodb+srv://sudhhaanad:bqyphsHU2cAAhEXA@mern-vercel.cqwimgc.mongodb.net/mern-vercel?retryWrites=true&w=majority&appName=mern-vercel')
 .then(() => {
     console.log("DB connected")
 })
