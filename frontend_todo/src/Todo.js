@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import './App.css';
 import './index.css';
 
+const apiUrl = "https://todo-7fczc3c6u-sudha-2k25s-projects.vercel.app/";
 
 export default function Todo(){
         {/* useState s*/}
