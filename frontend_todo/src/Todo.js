@@ -11,7 +11,7 @@ export default function Todo(){
     const [error , setError] = useState("");
     const [message , setMessage] = useState("");
     const [editId , setEditId] = useState(-1); // by default ist will be -1
-    const ' https://deploy-mern-api-pied.vercel.app/ ' = "http://localhost:8000"
+    const apiUrl = "http://localhost:8000"
 
     // Edit
     const [editTitle , setEditTitle] = useState("");
@@ -25,7 +25,7 @@ export default function Todo(){
         // check input values empty or not // trim - remove white spaces
         if (title.trim() !== '' && description.trim() !== ''){
             // for creating an item , vve to send request to backend
-            fetch(' https://deploy-mern-api-pied.vercel.app/ '+"/todos", {
+            fetch(apiUrl+"/todos", {
                 method : "POST",
                 headers : {        // as it is a json data
                     'Content-Type' : 'application/json'
@@ -61,7 +61,7 @@ export default function Todo(){
 
     // to get todo items
     const getItems = () =>{
-        fetch(' https://deploy-mern-api-pied.vercel.app/ '+"/todos")
+        fetch(apiUrl+"/todos")
         .then( (res)  => res.json())
         .then( (res) =>{
             setTodos(res)
@@ -87,7 +87,7 @@ export default function Todo(){
         // check input values empty or not // trim - remove white spaces
         if (editTitle.trim() !== '' && editDescription.trim() !== ''){
             // for creating an item , vve to send request to backend
-            fetch(' https://deploy-mern-api-pied.vercel.app/ '+"/todos/"+editId, {
+            fetch(apiUrl+"/todos/"+editId, {
                 method : "PUT",
                 headers : {        // as it is a json data
                     'Content-Type' : 'application/json'
@@ -131,7 +131,7 @@ export default function Todo(){
     // Delete button // confirm = creates a pop and asks ques
     const handleDelete = (_id) =>{
         if (window.confirm(' Are you sure want to delete ?')){
-            fetch(' https://deploy-mern-api-pied.vercel.app/ '+'/todos/'+_id , {
+            fetch(apiUrl+'/todos/'+_id , {
                 method : "DELETE"
             })
             .then( () =>{ // removing the deleted item , filtering out done
