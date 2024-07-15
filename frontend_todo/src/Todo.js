@@ -4,7 +4,7 @@ import './index.css';
 
 
 export default function Todo(){
-        {/* useState */}
+        {/* useState s*/}
     const [title , setTitle] = useState("");
     const [description , setDescription] = useState("");
     const [todos , setTodos] = useState([]);
