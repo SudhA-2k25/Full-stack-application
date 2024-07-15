@@ -8,13 +8,7 @@ const cors = require('cors'); // npm install cors
 // Create an instance of Express
 const app = express();
 app.use(express.json()) // express middlewear
-app.use(cors(
-    {
-        origin : ["https://deploy-mern-1whq.verce.app"],
-        methods : ['POST' , 'GET' , 'PUT' , 'DELETE'],
-        credentials : true;
-    }
-));
+
 
 
 // Define a route
